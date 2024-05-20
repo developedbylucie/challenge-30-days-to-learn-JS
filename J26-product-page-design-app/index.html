@@ -10,10 +10,14 @@
     <div class="container">
         <div class="product">
             <div class="gallery">
-                <img src="images/image1.png">
-                <!-- <img src="images/image2.png"> -->
-                <!-- <img src="images/image3.png"> -->
+                <img src="images/image1.png" id="productImg">
+                <div class="controls">
+                    <span class="btn active"></span>
+                    <span class="btn"></span>
+                    <span class="btn"></span>
+                </div>
             </div>
+
             <div class="details">
                 <h1>T-shirt décontracté</h1>
                 <h2>$15.00</h2>
@@ -48,20 +52,61 @@
                         <p>Couleur</p>
                         <label for="red">
                             <input type="radio" name="color" id="red">
+                            <span class="color-1"></span>
                         </label>
-                        <label for="red">
-                            <input type="radio" name="color" id="red">
+                        <label for="green">
+                            <input type="radio" name="color" id="green">
+                            <span class="color-2"></span>
                         </label>
-                        <label for="red">
-                            <input type="radio" name="color" id="red">
+                        <label for="blue">
+                            <input type="radio" name="color" id="blue">
+                            <span class="color-3"></span>
+                        </label>
+                        <label for="pink">
+                            <input type="radio" name="color" id="pink">
+                            <span class="color-4"></span>
                         </label>
                     </div>
+
+                    <div class="quantity-select">
+                        <p>Quantité</p>
+                        <input type="number" value&="">
+                    </div>
+
+                    <button>Acheter maintenant</button>
 
                 </form>
             </div>
         </div>
     </div>
     
-<script></script>
+<script>
+    let productImg = document.getElementById("productImg")
+    let btn = document.getElementsByClassName('btn')
+
+    btn[0].onclick = function(){
+        productImg.src = "images/image1.png"
+        for(bt of btn){
+            bt.classList.remove("active")
+        }
+        this.classList.add("active")
+    }
+    btn[1].onclick = function(){
+        productImg.src = "images/image2.png"
+        for(bt of btn){
+            bt.classList.remove("active")
+        }
+        this.classList.add("active")
+    }
+    btn[2].onclick = function(){
+        productImg.src = "images/image3.png"
+        for(bt of btn){
+            bt.classList.remove("active")
+        }
+        this.classList.add("active")
+    }
+
+
+</script>
 </body>
 </html>
